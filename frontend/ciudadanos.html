@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/scss/style.scss">
+</head>
+<body>
+    <div class="container mt-4 p-3 bg-body rounded shadow">
+        <!--boton para abrir la modal-->
+        <button type="button" id="btnCrear" class="btn btn-primary">Crear</button><br><br>
+        <!--tabla-->
+        <table class="table table-hover">
+            <thead class="table-info">
+                <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Apodo</th>
+                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Planeta Origen</th>
+                <th scope="col">Planeta Residencia</th>
+                <th scope="col">Foto</th>
+                <th scope="col">codigo QR</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="ciudadanos">
+                <!-- Los ciudadanos se cargarán aquí mediante JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalCiudadano" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg bg-body-secondary"> 
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Mantenimiento del ciudadano</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <form id="frmCiudadano" class="p-4 rounded-4 shadow bg-light">
+                    <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" placeholder="Ingresa tus apellidos">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="apodo" class="form-label">Apodo</label>
+                    <input type="text" class="form-control" id="apodo" placeholder="Alias o sobrenombre">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="planeta_origen" class="form-label">Planeta de origen</label>
+                    <input type="text" class="form-control" id="planeta_origen" placeholder="Ej. Tierra" required>
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="planeta_residencia" class="form-label">Planeta de residencia</label>
+                    <input type="text" class="form-control" id="planeta_residencia" placeholder="Ej. Marte" required>
+                    </div>
+
+                    <div class="mb-4">
+                    <label for="foto" class="form-label">Foto</label>
+                    <input type="file" class="form-control" id="foto">
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/js/ciudadanos.js"></script>
+</body>
+</html>
