@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 
 // Importar rutas
 import ciudadano from "./src/modules/ciudadanos/ciudadano.routes.js";
+import usuario from "./src/modules/usuarios/usuario.routes.js";
 
 // Inicializar app de express
 const app = express();
@@ -26,6 +27,7 @@ app.use('/fotos', express.static(path.join(__dirname, 'fotos')));
 
 //Rutas del sistema
 app.use('/ciudadano', ciudadano);
+app.use('/usuario', usuario);
 
 //Arrancar servidor
 const puerto = process.env.APP_PORT || 4100;
