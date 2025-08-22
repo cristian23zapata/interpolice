@@ -19,7 +19,7 @@ export const generarQR = async (data, codigo) => {
 
     // Nombre de archivo y ruta donde guardar
     const fileName = `ciudadano_${codigo}.png`;
-    const qrDir = path.join(__dirname, '..', '__qrcodes');
+    const qrDir = path.join(__dirname, '..', '../qrcodes');
 
     // Asegurarse de que la carpeta exista
     if (!fs.existsSync(qrDir)) {

@@ -120,6 +120,10 @@ export async function loginUsuario(req, res) {
       });
     }
 
+    const token = generarToken(usuario[0], process.env.TOKEN_LIFE);
+    console.log("Token generado:", token);
+
+
     // Comparar la contraseña proporcionada con el hash almacenado
     const passwordMatch = await bcrypt.compare(password, usuario.password);
     
